@@ -15,15 +15,9 @@ return {
 
     {
         "nvim-treesitter/nvim-treesitter",
-        opts = {
-            ensure_installed = {
-                "vim",
-                "lua",
-                "vimdoc",
-                "c",
-                "cpp",
-                "cmake",
-            },
-        },
+        event = { "BufWritePre", "BufNewFile" },
+        config = function ()
+            require("configs.treesitter")
+        end,
     },
 }
