@@ -26,7 +26,7 @@ lspconfig.lua_ls.setup({
     settings = {
         Lua = {
             diagnostics = {
-                enable = false,
+                enable = true,
                 -- globals = { "vim" },
             },
             workspace = {
