@@ -19,14 +19,14 @@ for _, lsp in ipairs(default_servers) do
 end
 
 lspconfig.lua_ls.setup({
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
 
     settings = {
         Lua = {
             diagnostics = {
-                enable = true,
+                enable = false,
                 -- globals = { "vim" },
             },
             workspace = {
@@ -35,6 +35,7 @@ lspconfig.lua_ls.setup({
                     vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
                     vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types",
                     vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
+                    "${3rd}/love2d/library",
                 },
                 maxPreload = 100000,
                 preloadFileSize = 10000,

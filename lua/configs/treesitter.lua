@@ -11,7 +11,8 @@ local options = {
         "yaml",
         "c",
         "cpp",
-        "cmake"
+        "cmake",
+        "make",
     },
 
     highlight = {
