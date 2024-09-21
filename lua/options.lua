@@ -3,6 +3,7 @@ require("nvchad.options")
 local o = vim.o
 local opt = vim.opt
 
+o.number = true
 o.relativenumber = true
 
 o.shiftwidth = 4
@@ -15,3 +16,4 @@ opt.listchars = {
     space = "·",
     tab = "»=",
 }
+vim.opt.guicursor = ""
