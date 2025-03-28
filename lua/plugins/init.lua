@@ -1,3 +1,5 @@
+local nvim_tree = require("configs.nvim-tree")
+
 return {
     {
         "stevearc/conform.nvim",
@@ -44,5 +46,9 @@ return {
             require "configs.nvim-dap-ui"
         end,
         lazy = false,
+    },
+
+    {
+        nvim_tree
     },
 }

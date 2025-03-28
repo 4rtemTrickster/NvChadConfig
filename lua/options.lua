@@ -24,4 +24,4 @@ opt.listchars = {
     tab = "»-",
 }
 
-vim.opt.guicursor = ""
+opt.guicursor = "n-v-i-c:block-Cursor"

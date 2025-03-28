@@ -4,21 +4,21 @@ require("cmake-tools").setup {
   cmake_regenerate_on_save = true, -- auto generate when save CMakeLists.txt
   cmake_generate_options = {
     "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
-    "-DFETCHCONTENT_QUIET=OFF",
-    "--log-level DEBUG",
+    -- "-DFETCHCONTENT_QUIET=OFF",
+    -- "--log-level DEBUG",
     "-DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
     -- "-DCPM_SOURCE_CACHE=~/.cache/cpm/",
     "-DCMAKE_BUILD_TYPE=Debug",
     "-DCMAKE_GENERATOR='Ninja'",
-    "-DCMAKE_CXX_FLAGS='-Wnrvo -Wpessimizing-move -pipe -march=native -ggdb3 -flto=auto -fdiagnostics-color=always -fdiagnostics-color'",
-    "-DCMAKE_EXE_LINKER_FLAGS='-fuse-ld=mold -flto=auto'",
+    -- "-DCMAKE_CXX_FLAGS='-Wnrvo -Wpessimizing-move -pipe -march=native -ggdb3 -flto=auto -fdiagnostics-color=always -fdiagnostics-color'",
+    -- "-DCMAKE_EXE_LINKER_FLAGS='-fuse-ld=mold -flto=auto'",
   }, -- this will be passed when invoke `CMakeGenerate`
   cmake_build_options = { "--parallel 24", "--verbose" }, -- this will be passed when invoke `CMakeBuild`
   -- support macro expansion:
   --       ${kit}
   --       ${kitGenerator}
   --       ${variant:xx}
-  cmake_build_directory = "build/${kit}/${kitGenerator}/${variant:buildType}", -- this is used to specify generate directory for cmake, allows macro expansion, relative to vim.loop.cwd()
+  cmake_build_directory = "out/build/${kit}/${kitGenerator}/${variant:buildType}", -- this is used to specify generate directory for cmake, allows macro expansion, relative to vim.loop.cwd()
   cmake_soft_link_compile_commands = true, -- this will automatically make a soft link from compile commands file to project root dir
   cmake_compile_commands_from_lsp = false, -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
 --  cmake_kits_path = "~/.local/share/CMakeTools/cmake-tools-kits.json", -- this is used to specify global cmake kits path, see CMakeKits for detailed usage
