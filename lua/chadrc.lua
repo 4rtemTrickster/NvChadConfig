@@ -46,6 +46,9 @@ M.mason = {
         "json-lsp",
         "jsonlint",
 
+        -- xml/xslt
+        "lemminx",
+
         -- debugging
         "codelldb",
     },

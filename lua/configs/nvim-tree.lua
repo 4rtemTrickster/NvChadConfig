@@ -117,9 +117,9 @@ return {
         }
 
         -- Key mappings
-        map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {
-            desc = "Toggle NvimTree"
-        })
+        -- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {
+        --     desc = "Toggle NvimTree"
+        -- })
 
 
     end
