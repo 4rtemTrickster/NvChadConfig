@@ -1,9 +1,8 @@
-local nvim_tree = require("configs.nvim-tree")
+local nvim_tree_cfg = require("configs.nvim-tree")
 
 return {
     {
         "stevearc/conform.nvim",
-        -- event = 'bufwritepre', -- uncomment for format on save
         opts = require "configs.conform",
     },
 
@@ -16,6 +15,7 @@ return {
 
     {
         "nvim-treesitter/nvim-treesitter",
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
             require "configs.treesitter"
         end,
@@ -49,6 +49,6 @@ return {
     },
 
     {
-        nvim_tree
+        nvim_tree_cfg
     },
 }
