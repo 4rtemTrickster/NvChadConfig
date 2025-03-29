@@ -11,7 +11,7 @@ local options = {
         "yaml",
         "cpp",
         "json",
-        "xml"
+        "xml",
     },
 
     highlight = {
@@ -19,7 +19,7 @@ local options = {
         use_languagetree = true,
     },
 
-    indent = {enable = true },
+    indent = { enable = true },
 }
 
 require("nvim-treesitter.configs").setup(options)

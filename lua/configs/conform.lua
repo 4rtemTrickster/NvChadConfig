@@ -6,7 +6,7 @@ local options = {
     },
 
     formatters = {
-       ["clang-format"] = {
+        ["clang-format"] = {
             prepend_args = {
                 "-style={ \
                         IndentWidth: 4, \
@@ -16,7 +16,7 @@ local options = {
                         IndentAccessModifiers: true, \
                         PackConstructorInitializers: Never}",
             },
-        }
+        },
     },
 }
 

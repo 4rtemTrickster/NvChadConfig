@@ -3,23 +3,23 @@ local map = vim.keymap.set
 -- Function to set highlight groups
 local function set_highlights()
     vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", {
-        fg = "#8891B1"
+        fg = "#8891B1",
     })
     vim.api.nvim_set_hl(0, "NvimTreeStatusLine", {
-        bg = "#1e222a"
+        bg = "#1e222a",
     })
     -- Set statusline background color
     vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", {
-        fg = "#1e222a"
+        fg = "#1e222a",
     }) -- Set end of buffer color to match background
 
     -- Highlight selected file or folder
     vim.api.nvim_set_hl(0, "NvimTreeCursorLine", {
-        bg = "#383D4E"
+        bg = "#383D4E",
     }) -- Set background color when a file or folder is selected
     vim.api.nvim_set_hl(0, "NvimTreeCursorLineNr", {
         fg = "#abb2bf",
-        bg = "#383D4E"
+        bg = "#383D4E",
     }) -- Set foreground and background color of line number when a file or folder is selected
 end
 
@@ -42,7 +42,7 @@ return {
                     buffer = bufnr,
                     noremap = true,
                     silent = true,
-                    nowait = true
+                    nowait = true,
                 }
             end
 
@@ -67,13 +67,13 @@ return {
             update_focused_file = {
                 enable = true,
                 update_cwd = true,
-                ignore_list = {}
+                ignore_list = {},
             },
             filters = {
-                custom = {"^.git$"}
+                custom = { "^.git$" },
             },
             git = {
-                enable = true
+                enable = true,
             },
             renderer = {
                 indent_markers = {
@@ -82,8 +82,8 @@ return {
                         corner = "└",
                         edge = "│",
                         item = "├",
-                        none = " "
-                    }
+                        none = " ",
+                    },
                 },
                 highlight_git = "none",
                 icons = {
@@ -92,7 +92,7 @@ return {
                             default = "",
                             open = "",
                             empty = "",
-                            empty_open = ""
+                            empty_open = "",
                         },
                         git = {
                             unstaged = "",
@@ -101,26 +101,24 @@ return {
                             renamed = "",
                             untracked = "",
                             deleted = "",
-                            ignored = "󰴲"
-                        }
-                    }
-                }
+                            ignored = "󰴲",
+                        },
+                    },
+                },
             },
             view = {
                 width = 60,
                 side = "left",
-                signcolumn = "no"
+                signcolumn = "no",
             },
             filesystem_watchers = {
-                ignore_dirs = {"node_modules"}
-            }
+                ignore_dirs = { "node_modules" },
+            },
         }
 
         -- Key mappings
         -- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {
         --     desc = "Toggle NvimTree"
         -- })
-
-
-    end
+    end,
 }
