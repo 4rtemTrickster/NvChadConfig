@@ -16,7 +16,11 @@ for _, lsp in ipairs(default_servers) do
 end
 
 lspconfig.clangd.setup {
-    on_attach = nvlsp.on_attach,
+    on_attach = function (client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        nvlsp.on_attach(client, bufnr)
+    end,
     capabilities = nvlsp.capabilities,
     cmd = { "clangd", "--log=info" }
 }
