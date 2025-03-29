@@ -27,6 +27,7 @@ M.mason = {
         -- lua
         "lua-language-server",
         "stylua",
+        -- "luacheck",
 
         -- c/cpp
         "clangd",

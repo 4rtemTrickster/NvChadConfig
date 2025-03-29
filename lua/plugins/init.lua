@@ -1,4 +1,4 @@
-local nvim_tree_cfg = require("configs.nvim-tree")
+local nvim_tree_cfg = require "configs.nvim-tree"
 
 return {
     {
@@ -10,6 +10,14 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             require "configs.lspconfig"
+        end,
+    },
+
+    {
+        "mfussenegger/nvim-lint",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require "configs.lint"
         end,
     },
 
@@ -49,6 +57,6 @@ return {
     },
 
     {
-        nvim_tree_cfg
+        nvim_tree_cfg,
     },
 }
