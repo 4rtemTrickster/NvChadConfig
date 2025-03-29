@@ -16,6 +16,8 @@ o.relativenumber = true
 opt.cursorline = true
 
 opt.scrolloff = 10
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
 
 opt.list = true
 opt.listchars = {
@@ -25,3 +27,12 @@ opt.listchars = {
 }
 
 opt.guicursor = "n-v-i-c:block-Cursor"
+opt.colorcolumn = "120"
+opt.wrap = false
+
+opt.swapfile = false
+opt.backup = false
+
+
+opt.hlsearch = false
+opt.incsearch = true
