@@ -85,6 +85,13 @@ return {
     },
 
     {
+        "rcarriga/nvim-notify",
+        config = function()
+            require "configs.nvim-notify"
+        end,
+    },
+
+    {
         nvim_tree_cfg,
     },
 }
