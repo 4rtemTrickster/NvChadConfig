@@ -100,4 +100,9 @@ return {
         event = "VeryLazy",
         opts = require "configs.smear-cursor",
     },
+
+    {
+        "ThePrimeagen/vim-be-good",
+        cmd = "VimBeGood"
+    },
 }
