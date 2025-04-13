@@ -4,7 +4,7 @@ local nvlsp = require "nvchad.configs.lspconfig"
 
 local lspconfig = require "lspconfig"
 
-local default_servers = { "neocmake", "lemminx", "jsonls", "yamlls" }
+local default_servers = { "lemminx", "jsonls", "yamlls" }
 
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do
@@ -29,4 +29,19 @@ lspconfig.clangd.setup {
     end,
     capabilities = nvlsp.capabilities,
     cmd = { "clangd", "--log=info" },
+}
+
+lspconfig.neocmake.setup {
+    cmd = { "neocmakelsp", "--stdio" },
+    filetypes = { "cmake" },
+    root_dir = function (fname)
+        return lspconfig.util.find_git_ancestor(fname)
+    end,
+    single_file_support = true,
+    on_attach = nvlsp.on_attach,
+    init_options = {
+        format = { enable = true },
+        lint = { enable = true},
+        scan_cmake_in_package = true
+    }
 }

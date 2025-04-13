@@ -8,6 +8,8 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-f>", "<C-f>zz")
+map("n", "<C-b>", "<C-b>zz")
 
 
 -- CMake releated stuff
@@ -240,4 +242,15 @@ map(
         widgets.centered_float(widgets.scopes)
     end,
     { desc = "dapui widgets scopes float ?" }
+)
+
+
+-- LSP stuff
+map(
+    "n",
+    "K",
+    function ()
+        vim.lsp.buf.hover()
+    end,
+    { desc = "LSP hover" }
 )

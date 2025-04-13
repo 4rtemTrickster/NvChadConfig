@@ -94,4 +94,10 @@ return {
     {
         nvim_tree_cfg,
     },
+
+    {
+        "sphamba/smear-cursor.nvim",
+        event = "VeryLazy",
+        opts = require "configs.smear-cursor",
+    },
 }

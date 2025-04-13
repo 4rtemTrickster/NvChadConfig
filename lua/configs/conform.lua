@@ -13,7 +13,7 @@ local options = {
                         TabWidth: 4, \
                         UseTab: Never, \
                         AccessModifierOffset: 0, \
-                        IndentAccessModifiers: true, \
+                        IndentAccessModifiers: false, \
                         PackConstructorInitializers: Never}",
             },
         },
