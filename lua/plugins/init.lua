@@ -103,6 +103,16 @@ return {
 
     {
         "ThePrimeagen/vim-be-good",
-        cmd = "VimBeGood"
+        cmd = "VimBeGood",
+    },
+
+    {
+        "rmagatti/auto-session",
+        lazy = false,
+
+        ---enables autocomplete for opts
+        ---@module "auto-session"
+        ---@type AutoSession.Config
+        opts = require "configs.auto-session"
     },
 }
