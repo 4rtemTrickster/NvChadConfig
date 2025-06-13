@@ -113,6 +113,20 @@ return {
         ---enables autocomplete for opts
         ---@module "auto-session"
         ---@type AutoSession.Config
-        opts = require "configs.auto-session"
+        opts = require "configs.auto-session",
+    },
+
+    {
+        "stevearc/oil.nvim",
+        ---@module 'oil'
+        ---@type oil.SetupOpts
+        opts = {},
+        -- Optional dependencies
+        -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
+        dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+        lazy = false,
+        config = function ()
+            require "configs.oil"
+        end
     },
 }

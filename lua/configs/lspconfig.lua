@@ -28,20 +28,35 @@ lspconfig.clangd.setup {
         end
     end,
     capabilities = nvlsp.capabilities,
-    cmd = { "clangd", "--log=info" },
+    cmd = {
+        "clangd",
+        "--background-index",
+        "-j=12",
+        -- -- "--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
+        "--clang-tidy",
+        "--clang-tidy-checks=*",
+        "--header-insertion=iwyu",
+        "--header-insertion-decorators",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        -- "--all-scopes-completion",
+        -- "--cross-file-rename",
+        -- "--pch-storage=memory",
+        "--log=info",
+    },
 }
 
 lspconfig.neocmake.setup {
     cmd = { "neocmakelsp", "--stdio" },
     filetypes = { "cmake" },
-    root_dir = function (fname)
+    root_dir = function(fname)
         return lspconfig.util.find_git_ancestor(fname)
     end,
     single_file_support = true,
     on_attach = nvlsp.on_attach,
     init_options = {
         format = { enable = true },
-        lint = { enable = true},
-        scan_cmake_in_package = true
-    }
+        lint = { enable = true },
+        scan_cmake_in_package = true,
+    },
 }

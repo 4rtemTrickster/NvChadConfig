@@ -15,6 +15,7 @@ map("n", "<C-b>", "<C-b>zz")
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
+map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- CMake releated stuff
 map("n", "<leader>G",  ":CMakeGenerate <CR>",              { desc = "CMake Configure and generate"                       })
