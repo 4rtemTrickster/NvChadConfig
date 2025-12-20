@@ -259,3 +259,12 @@ map(
     end,
     { desc = "LSP hover" }
 )
+
+map(
+    "n",
+    "<leader>I",
+    function ()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}), {0})
+    end,
+    { desc = "Toggle inlay hits" }
+)
